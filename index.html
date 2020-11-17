@@ -1,24 +1,41 @@
+<!DOCTYPE html>
+
 <html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>HangMan</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <h1>HANGMAN</h1>
 
-<h1>HANGMAN</h1>
+        <div class="hangman-container"> 
+        
+            <svg class="hangman" width="300" height="250">
+                <line x1='60' y1='20' x2='140'  y2='20'/>
+                <line x1='140' y1='20' x2='140'  y2='50'/>
+                <line x1='60' y1='20' x2='60'  y2='250'/>
+                <line x1='25' y1='250' x2='150'  y2='250'/>
 
-<div class="hangman-container"> 
+                <circle cx="140" cy="70" r="20"/>
+                <line x1='140' y1='90' x2='140'  y2='150'/>
+                <line x1='120' y1='90' x2='140'  y2='115'/>
+                <line x1='160' y1='90' x2='140'  y2='115'/>
 
-    <svg class="hangman" width="300" height="250">
-        <line x1='60' y1='20' x2='140'  y2='20'/>
-        <line x1='140' y1='20' x2='140'  y2='50'/>
-        <line x1='60' y1='20' x2='60'  y2='250'/>
-        <line x1='25' y1='250' x2='150'  y2='250'/>
-    </svg> 
-
-</div>
+                <line x1='140' y1='150' x2='120'  y2='185'/>
+                <line x1='140' y1='150' x2='160'  y2='185'/>
 
 
-<div class="hello">
-    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Illum dignissimos minima ut sunt sapiente nobis quasi, molestias aut voluptatem, facere voluptatibus quis? Sint, error totam! Hic expedita explicabo exercitationem aperiam?</p>
-</div>
-
-    <p>words</p>
-
+            </svg> 
+        
+        </div>
+        
+        
+            <p>words</p>
+        
+        <script src="script.js"></script>
+    </body>
 </html>
-
