@@ -57,18 +57,8 @@ window.addEventListener('keydown', letter => {
 
 
 
-    // console.log("hellotest");
-            
-    // displayWord();
-    // console.log(correctLetter);
+    if(typeof wrongLetter[0] === 'string') {
+        document.querySelector('#head').classList.remove('body-part')
+    }
+// I want when someone types a wrong letter to make the body parts appear
 
-
-
-// displayWord();
-
-
-
-
-// for (i = 0; i < wrongLetter.length; i++)
-// document.writeln((i+1) + ": " + wrongLetter[i]);
-// document.querySelector('.wrongLetters').innerHTML += (i+1) + ": " + array[i];

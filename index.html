@@ -10,48 +10,54 @@
         <link rel="stylesheet" href="style.css">
     </head>
     <body>
-        <div class="title"> <h1>HANGMAN</h1> </div> 
+        <div class="container">
+            <div class="title"> <h1>HANGMAN</h1> </div> 
 
 
 
-        <div class="hangman-container"> 
-           
-        
-            <svg class="hangman" width="300" height="250">
-                <line x1='60' y1='20' x2='140'  y2='20'/>
-                <line x1='140' y1='20' x2='140'  y2='50'/>
-                <line x1='60' y1='20' x2='60'  y2='250'/>
-                <line x1='25' y1='250' x2='150'  y2='250'/>
-
-                <circle cx="140" cy="70" r="20"  class="body-part"/>
-                <line x1='140' y1='90' x2='140'  y2='150' class="body-part"/>
-                <line x1='120' y1='90' x2='140'  y2='115' class="body-part"/>
-                <line x1='160' y1='90' x2='140'  y2='115' class="body-part"/>
-
-                <line x1='140' y1='150' x2='120'  y2='185' class="body-part"/>
-                <line x1='140' y1='150' x2='160'  y2='185' class="body-part"/>
-
-
-            </svg> 
+            <div class="hangman-container"> 
             
-            <div class="letters">
-                <div class="wrongLetter"></div>
-                <div class="wrongLetter"></div>
-                <div class="wrongLetter"></div>
-                <div class="wrongLetter"></div>
+            
+                <svg class="hangman" width="300" height="250">
+                    <line x1='60' y1='20' x2='140'  y2='20'/>
+                    <line x1='140' y1='20' x2='140'  y2='50'/>
+                    <line x1='60' y1='20' x2='60'  y2='250'/>
+                    <line x1='25' y1='250' x2='150'  y2='250'/>
+
+                    <circle cx="140" cy="70" r="20"  class="body-part" id="head"/>
+                    <line x1='140' y1='90' x2='140'  y2='150' class="body-part" id="body"/>
+                    <line x1='120' y1='90' x2='140'  y2='115' class="body-part" id="armA"/>
+                    <line x1='160' y1='90' x2='140'  y2='115' class="body-part" id="armB"/>
+
+                    <line x1='140' y1='150' x2='120'  y2='185' class="body-part" id="legA"/>
+                    <line x1='140' y1='150' x2='160'  y2='185' class="body-part" id="legB"/>
+
+
+                </svg> 
+                    <div><h2>wrong letters---></h2></div>
+                    <br>
+                    <br>
+                
+                
+                <div class="letters">
+                    <div class="wrongLetter"></div>
+                    <div class="wrongLetter"></div>
+                    <div class="wrongLetter"></div>
+                    <div class="wrongLetter"></div>
+                </div>
+
+
             </div>
-
-
-        </div>
-        
-        <div class="words">
-            <div class="letter"></div>
-            <div class="letter"></div>
-            <div class="letter"></div>
-            <div class="letter"></div>
-        </div>
-           
-        
-        <script src="script.js"> </script>
+            
+            <div class="words">
+                <div class="letter"></div>
+                <div class="letter"></div>
+                <div class="letter"></div>
+                <div class="letter"></div>
+            </div>
+            
+            
+            <script src="script.js"> </script>
+    </div>
     </body>
 </html>
