@@ -4,18 +4,23 @@
 const wordsArray = ['hello', 'goodbye', 'test', 'two words'];
 
 // Random words from the list should be chosen 
-const randomWordEl = Math.floor(Math.random() * wordsArray.length);
-
-// display random words in html
-const letterEl = document.querySelector('.letter').innerHTML = wordsArray[randomWordEl];
-
-
-console.log(wordsArray[randomWordEl]);
+const randomWordEl = wordsArray[Math.floor(Math.random() * wordsArray.length)];
+const words = document.querySelector('.words');
 
 
 
-// ----------------------
+const correctLetter = ['h', 'e', 'l', 'l', 'o'];
 
-// The word should be hidden 
-// if keydown is correct then the letter should show 
-// else the letter should go in the letter array
+
+
+
+
+
+function displayWord(){
+    words.innerHTML = `${randomWordEl.split('').map(
+        letter => `<span class="letter"> 
+            ${correctLetter.includes(letter) ? letter : '' }
+        </span>`).join('')}`;
+}
+
+displayWord();
