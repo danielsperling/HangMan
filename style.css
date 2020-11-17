@@ -1,0 +1,10 @@
+.hangman {
+  fill: transparent;
+  stroke: black;
+  stroke-width: 5px;
+  stroke-linecap: round;
+}
+
+.hello {
+  background-color: black;
+}
