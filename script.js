@@ -28,7 +28,9 @@ function displayWord(){
 
 
 function displayWrongLetter(){
-    wrongLetters.innerHTML = `${wrongLetter}`
+    wrongLetters.innerHTML = `${wrongLetter.map
+        (letter =>`<span class="wrongLetter"> ${letter} </span>`).join('')}`;
+
 
 }
 
@@ -47,6 +49,7 @@ window.addEventListener('keydown', letter => {
             if(!wrongLetter.includes(letter.key)){
                 wrongLetter.push(letter.key);
                 console.log(wrongLetter);
+                displayWrongLetter();
             }
         }
     });
@@ -61,4 +64,11 @@ window.addEventListener('keydown', letter => {
 
 
 
-displayWord();
+// displayWord();
+
+
+
+
+// for (i = 0; i < wrongLetter.length; i++)
+// document.writeln((i+1) + ": " + wrongLetter[i]);
+// document.querySelector('.wrongLetters').innerHTML += (i+1) + ": " + array[i];
