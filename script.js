@@ -9,9 +9,10 @@ const words = document.querySelector('.words');
 
 
 
-const correctLetter = ['h', 'e', 'l', 'l', 'o'];
+const correctLetter = [];
 
 
+console.log(correctLetter);
 
 
 
@@ -22,5 +23,27 @@ function displayWord(){
             ${correctLetter.includes(letter) ? letter : '' }
         </span>`).join('')}`;
 }
+
+
+window.addEventListener('keydown', letter => {
+    console.log(letter.key)
+    console.log(randomWordEl)
+        if(randomWordEl.includes(letter.key)){
+            correctLetter.push(letter.key)
+            console.log(correctLetter);
+            
+        }
+        displayWord();
+    });
+
+
+
+
+    // console.log("hellotest");
+            
+    // displayWord();
+    // console.log(correctLetter);
+
+
 
 displayWord();
