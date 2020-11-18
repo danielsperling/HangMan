@@ -11,7 +11,7 @@ const bodyPart = document.querySelectorAll('.bodyParts');
 const popup = document.querySelector('.notification');
 
 
-console.log(popup.innerHTML);
+console.log(popup);
 
 
 
@@ -70,10 +70,14 @@ window.addEventListener('keydown', letter => {
     
 
         if(randomWordEl.includes(lettr)){
-            if(!correctLetter.includes(lettr))
-            correctLetter.push(lettr);
-            displayWord();
-
+            if(!correctLetter.includes(lettr)){
+                correctLetter.push(lettr);
+                displayWord();
+            } else {
+                correctLetter.push(lettr);
+                displayWord();
+            }
+      
         }else if(!randomWordEl.includes(lettr)){
             if(!wrongLetter.includes(lettr)){
                 wrongLetter.push(lettr);
