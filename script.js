@@ -14,13 +14,8 @@ const bodyPart = document.querySelectorAll('.bodyParts');
 const correctLetter = [];
 const wrongLetter = [];
 
-
-console.log(correctLetter);
-
-
-
-
 function displayWord(){
+
     words.innerHTML = `${randomWordEl.split('').map(
         letter => `<span class="letter"> 
             ${correctLetter.includes(letter) ? letter : '' }
@@ -66,15 +61,5 @@ window.addEventListener('keydown', letter => {
     });
 
 
-
-
-    body-part.forEach((part, index) => {
-        const wrongGuess = wrongLetter.length; 
-        if(index < errors) {
-            part.style.display = 'block';
-        } else {
-            part.style.display = 'none'
-        }
-    })
 // I want when someone types a wrong letter to make the body parts appear
 
