@@ -37,11 +37,14 @@ body {
   display: flex;
   font-weight: bold;
   display: flex;
+  position: absolute;
   justify-content: center;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 .letter {
-  border-bottom: 2px solid black;
+  border-bottom: 3px solid black;
   padding-bottom: 5px;
   display: inline-flex;
   justify-content: center;
@@ -49,9 +52,10 @@ body {
   font-size: 25px;
   width: 25px;
   height: 25px;
+  align-items: center;
 }
 
-.same-letter-notification {
+.notification {
   background-color: rgb(220, 220, 220);
   padding: 0 10px;
   text-align: center;
@@ -61,6 +65,6 @@ body {
   transition: transform 0.3s ease-in-out;
 }
 
-.same-letter-notification.show {
+.show {
   transform: translateY(-50px);
 }
