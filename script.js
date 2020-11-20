@@ -4,13 +4,14 @@
 const wordsArray = ['hello', 'goodbye', 'test'];
 
 // Random words from the list should be chosen 
-const randomWordEl = wordsArray[Math.floor(Math.random() * wordsArray.length)];
+let randomWordEl = wordsArray[Math.floor(Math.random() * wordsArray.length)];
 const words = document.querySelector('.words');
 const wrongLetters = document.querySelector('.letters');
 const bodyPart = document.querySelectorAll('.bodyParts');
 const popup = document.querySelector('.notification');
 const congrats = document.querySelector('.final-message-container')
-const cong = document.querySelector('.popay')
+const cong = document.querySelector('.final')
+const button = document.querySelector('.btn')
 
 console.log(popup);
 
@@ -51,7 +52,11 @@ function displayWrongLetter(){
                 part.style.display = 'none';
             }
         });
-        
+        if(wrongLetter.length === bodyPart.length){
+            cong.innerHTML = "You Lost!"
+            congrats.style.display = "flex"
+
+        }
 
 }
 
@@ -79,6 +84,7 @@ window.addEventListener('keydown', letter => {
             } else {
                 correctLetter.push(lettr);
                 displayWord();
+                showNotification()
             }
       
         }else if(!randomWordEl.includes(lettr)){
@@ -93,7 +99,17 @@ window.addEventListener('keydown', letter => {
     }
     });
 
+button.addEventListener('click', () => {
+     correctLetter.splice(0);
+     wrongLetter.splice(0);
 
+     randomWordEl = wordsArray[Math.floor(Math.random() * wordsArray.length)];
+
+     displayWord()
+     displayWrongLetter()
+
+     congrats.style.display ="none"
+})
 
  
 
