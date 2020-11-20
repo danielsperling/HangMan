@@ -1,5 +1,4 @@
 
-
 // I want to have a list of words 
 const wordsArray = ['hello', 'goodbye', 'test'];
 
@@ -15,7 +14,7 @@ const button = document.querySelector('.btn')
 
 console.log(popup);
 
-
+console.log(randomWords(5));
 
 
 const correctLetter = [];
