@@ -9,7 +9,8 @@ const words = document.querySelector('.words');
 const wrongLetters = document.querySelector('.letters');
 const bodyPart = document.querySelectorAll('.bodyParts');
 const popup = document.querySelector('.notification');
-
+const congrats = document.querySelector('.final-message-container')
+const cong = document.querySelector('.popay')
 
 console.log(popup);
 
@@ -28,8 +29,10 @@ function displayWord(){
 
         const correctWord = words.innerText.replace(/\n/g, '')
         console.log(correctWord);
-        if(correctLetter === correctWord){
-            document.body.style.background = "#222";
+        if(randomWordEl === correctWord){
+            cong.innerHTML = "CONGRATS YOU WON!!!"
+            congrats.style.display = "flex"
+            
         }
 }
 
