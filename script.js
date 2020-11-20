@@ -47,9 +47,10 @@ function displayWrongLetter(){
             }
         });
         if(wrongLetter.length === bodyPart.length){
-            cong.innerHTML = "You Lost!"
+            cong.innerHTML = `You Lost! <br> The correct word was : <u>${randomWordEl}</u> `
             congrats.style.display = "flex"
-            
+            window.removeEventListener("keydown", typing, true);      // Succeeds
+
         }
 
 }
@@ -103,7 +104,8 @@ button.addEventListener('click', () => {
      displayWrongLetter()
 
      congrats.style.display ="none"
-     console.log(randomWordEl);
+     window.addEventListener('keydown', typing, true)
+
 })
 
 function displayWord(){
@@ -118,7 +120,6 @@ function displayWord(){
         if(randomWordEl === correctWord){
             cong.innerHTML = "CONGRATS YOU WON!!!"
             congrats.style.display = "flex"
-            window.removeEventListener('keydown', typing, true);      // Succeeds
 
         }
 }
