@@ -9,6 +9,7 @@ body {
   align-items: center;
   height: 80vh;
   justify-content: center;
+  background-color: aliceblue;
 }
 
 .title {
@@ -72,7 +73,7 @@ body {
 }
 
 .final-message-container {
-  /* position: fixed; */
+  position: fixed;
   display: none;
   align-items: center;
   justify-self: center;
