@@ -24,7 +24,7 @@ const wrongLetter = [];
 console.log(randomWordEl);
 
 
-tip.innerHTML = randomWordEl[1]
+tip.innerHTML = `Synonyms : <bold> ${randomWordEl[1]} </bold>`
 
 
 function displayWrongLetter(){
@@ -42,7 +42,7 @@ function displayWrongLetter(){
             }
         });
         if(wrongLetter.length === bodyPart.length){
-            cong.innerHTML = `You Lost! <br> The correct word was : <u>${randomWordEl}</u> `
+            cong.innerHTML = `You Lost! <br> The correct word was : <u>${randomWordEl[0]}</u> `
             congrats.style.display = "flex"
             window.removeEventListener("keydown", typing, true);  
             tip.innerHTML = randomWordEl[1]    // Succeeds
