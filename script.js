@@ -1,16 +1,8 @@
 
-
-// I want to have a list of words 
-const wordsArray = ["penetrating", "topmost", "macabre", "impolitic", "unanalyzed", "roughshod", "homebound",
-                    "sanest", "tolerable", "steely", "wearisome", "wealthy", "interior", "downtalking", "bimonthly", "beribboned", "sorest",
-                    "human", "thoughtful", "sceptical", "salivary", "beloved", "answerable", "unconcerned", "holy", "unprecedented", "conscionable",
-                    "voluble", "slim", "tentative", "resident", "derogatory", "unequal", "corporate", "vernacular", "grotesque", "older", "ghostlike", "aflame", "copernican",
-                    "inadvertent", "international", "indelible", "ineluctable", "seductive", "undeclared", "dual", "gingerly", "modern", "bilinear", "theatrical", "proportionate",
-                    "febrile", "ivory", "coltish", "immovable", "untidy", "informational", "uppermost","expectable", "inhospitable", "ecumenical", "arctic", "charitable", "opalescent",
-                    "humanitarian", "canny", "bedfast", "clean", "talkative", "unreconstructed",
-                    "enzymatic", "defiant", "puny", "rash", "quickest", "insubordinate", "inexcusable",
-                    "surly", "intranasal", "priestly", "dark", "lifelong", "nonexistent", "shorter", "rougher", "objective", "hardboiled", "indigestible", "quiet", "watchful", "arcaded",
-                    "safer", "very", "unanswered", "chubby", "unresolved", "cylindrical", "lewd", "anemic"]
+const wordsArray = [['beautiful','attractive'],['bossy','controlling'],['fair','unbiassed'],
+['funny','humorous'],['happy','content'],['diligent','hardworking'],['lazy','lethargic'],
+['mean','unfriendly'],['outgoing', 'friendly'],['strong','stable'],['weak','frail'],
+['valid','authorized'],['positive','optimistic']]
 
 // Random words from the list should be chosen 
 let randomWordEl = wordsArray[Math.floor(Math.random() * wordsArray.length)];
@@ -18,18 +10,21 @@ const words = document.querySelector('.words');
 const wrongLetters = document.querySelector('.letters');
 const bodyPart = document.querySelectorAll('.bodyParts');
 const popup = document.querySelector('.notification');
-const congrats = document.querySelector('.final-message-container')
-const cong = document.querySelector('.final')
-const button = document.querySelector('.btn')
+const congrats = document.querySelector('.final-message-container');
+const cong = document.querySelector('.final');
+const button = document.querySelector('.btn');
+const points = document.querySelector('.score');
+const tip = document.querySelector('.tips');
 
 
-
-
+let score = 0
 
 const correctLetter = [];
 const wrongLetter = [];
 console.log(randomWordEl);
 
+
+tip.innerHTML = randomWordEl[1]
 
 
 function displayWrongLetter(){
@@ -49,7 +44,8 @@ function displayWrongLetter(){
         if(wrongLetter.length === bodyPart.length){
             cong.innerHTML = `You Lost! <br> The correct word was : <u>${randomWordEl}</u> `
             congrats.style.display = "flex"
-            window.removeEventListener("keydown", typing, true);      // Succeeds
+            window.removeEventListener("keydown", typing, true);  
+            tip.innerHTML = randomWordEl[1]    // Succeeds
 
         }
 
@@ -70,7 +66,7 @@ const typing = function(letter)  {
         const lettr = letter.key
     
 
-        if(randomWordEl.includes(lettr)){
+        if(randomWordEl[0].includes(lettr)){
             if(!correctLetter.includes(lettr)){
                 correctLetter.push(lettr);
                 displayWord();
@@ -78,9 +74,10 @@ const typing = function(letter)  {
                 correctLetter.push(lettr);
                 displayWord();
                 showNotification()
+                tip.innerHTML = randomWordEl[1]
             }
       
-        }else if(!randomWordEl.includes(lettr)){
+        }else if(!randomWordEl[0].includes(lettr)){
             if(!wrongLetter.includes(lettr)){
                 wrongLetter.push(lettr);
                 console.log(wrongLetter);
@@ -105,26 +102,35 @@ button.addEventListener('click', () => {
 
      congrats.style.display ="none"
      window.addEventListener('keydown', typing, true)
+     tip.innerHTML = randomWordEl[1]
+     console.log(randomWordEl);
+
 
 })
 
+function displayFirst(){
+    words.innerHTML = `<span class="letter">${randomWordEl[0].split('')[0]}</span>`
+}
+
 function displayWord(){
 
-    words.innerHTML = `${randomWordEl.split('').map(
-        letter => `<span class="letter"> 
+    words.innerHTML = `${randomWordEl[0].split('').map(
+        letter => `<span class="letter">
+            
             ${correctLetter.includes(letter) ? letter : '' }
         </span>`).join('')}`;
 
         const correctWord = words.innerText.replace(/\n/g, '')
         console.log(correctWord);
-        if(randomWordEl === correctWord){
+        if(randomWordEl[0] === correctWord){
             cong.innerHTML = "CONGRATS YOU WON!!!"
             congrats.style.display = "flex"
-
+            window.removeEventListener("keydown", typing, true); 
+            points.innerHTML = `Words Found : ${score += 1}`
+           
         }
 }
  
-
 
     displayWord()
 
