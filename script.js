@@ -51,7 +51,6 @@ function displayWrongLetter(){
 
 }
 
-
 function showNotification() {
     popup.classList.add('show');
     
@@ -105,7 +104,6 @@ button.addEventListener('click', () => {
      tip.innerHTML = randomWordEl[1]
      console.log(randomWordEl);
 
-
 })
 
 function displayFirst(){
@@ -130,8 +128,6 @@ function displayWord(){
            
         }
 }
- 
-
     displayWord()
 
 // I want when someone types a wrong letter to make the body parts appear
